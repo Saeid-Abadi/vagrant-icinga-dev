@@ -7,9 +7,40 @@ Image: `bento/rockylinux-8`
 Hostname: `icinga-dev`  
 Provider: `VirtualBox`  
 
+The following ports will be forwarded into the Vagrant box:
+* 80 (guest) => 80 (host)
+* 443 (guest) => 443 (host) // Webserver with TLS not configured via default
+* 5665 (guest) => 5665 (guest)
+
+## Credentials
+
+Default credentials if not customized (Format: `user` - `password`):
+* Icinga Web 2 admin => `icinga` - `icinga`
+* Icinga 2 API user => `poweruser` - `poweruser`
+* IcingaDB-redis password => `redis-pass`
+* Mysql `*.*` user => `poweruser` - `poweruser`
+* Mysql root user: `root` - `root0815!`
+
+## Components
+
+The most common used components are pre-installed and configured.
+* MySQL (Ansible role `geerlingguy.mysql`)
+* Icinga (Ansible collection `icinga.icinga`)
+  * Icinga 2
+  * Icingadb
+  * Icingadb Redis
+  * Icinga Web 2
+  * Icinga Director
+* Metrics (Ansible collection `tbauriedel.gographite`)
+  * go-carbon
+  * carbonapi
+
 ## Requirements
 
-Ansible needs to be installed.  
+**Vagrant**
+If you dont have it already check the official [installation guide](https://developer.hashicorp.com/vagrant/docs/installation).
+
+**Ansible**
 If you dont have it already check the official [installation guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
 
 ## Usage
@@ -27,10 +58,3 @@ Start the Vagrant box: `vagrant up`
 ---
 
 To sync additional modules or similar into the box, you can use the example inside of the [Vagrantfile](Vagrantfile) (Currently commented out).
-
-## Forwarded ports
-
-The following ports will be forwarded into the Vagrant box:
-* 80 (guest) => 80 (host)
-* 443 (guest) => 443 (host) // Webserver with TLS not configured via default
-* 5665 (guest) => 5665 (guest)
