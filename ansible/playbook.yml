@@ -10,6 +10,12 @@
           - "yml"
           - "yaml"
 
+    - ansible.builtin.fail:
+        msg: Icinga subscription credentials are not defined but RHEL-based box used!
+      when:
+        - ansible_os_family == "RedHat"
+        - icinga_repo_subscription_username == "" or icinga_repo_subscription_password == ""
+
   post_tasks:
     - name: Start / enable icinga-director
       ansible.builtin.systemd_service:
