@@ -1,3 +1,5 @@
+![Lint](https://github.com/tbauriedel/vagrant-icinga-dev/actions/workflows/linting.yml/badge.svg)
+
 # vagrant-icinga-dev
 
 Vagrantfile with ansible provisioner.  
