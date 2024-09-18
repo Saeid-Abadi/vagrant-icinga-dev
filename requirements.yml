@@ -1,0 +1,7 @@
+---
+roles:
+  - name: geerlingguy.mysql
+
+collections:
+  - name: icinga.icinga
+  - name: tbauriedel.gographite

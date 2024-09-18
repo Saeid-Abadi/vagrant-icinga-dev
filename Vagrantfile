@@ -1,4 +1,4 @@
-LOCAL_MODULES_PATH_GITHUB = "/Users/tbauriedel/workspace/github/tbauriedel/"
+#LOCAL_MODULES_PATH_GITHUB = "/Users/tbauriedel/workspace/github/tbauriedel/"
 
 Vagrant.configure("2") do |config|
   config.vm.hostname = "icinga-dev"

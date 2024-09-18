@@ -7,10 +7,17 @@ Image: `bento/rockylinux-8`
 Hostname: `icinga-dev`  
 Provider: `VirtualBox`  
 
+## Requirements
+
+Ansible needs to be installed.  
+If you dont have it already check the official [installation guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
+
 ## Usage
 Clone the repository: `git clone https://github.com/tbauriedel/vagrant-icinga-dev`
 
 Move into repository: `cd vagrant-icinga-dev`
+
+Install all needed ansible requirements: `ansible-galaxy install -r requirements.yml`
 
 Add Icinga Subscription credentials [here](ansible/vars/icinga2_repo.yml).  
 (If you dont have a subscription, just change the box to a debian based one)
