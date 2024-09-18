@@ -1,0 +1,35 @@
+---
+- hosts: all
+  gather_facts: true
+  become: true
+  pre_tasks:
+    - name: Include vars
+      ansible.builtin.include_vars:
+        dir: vars
+        extensions: 
+          - "yml"
+          - "yaml"
+
+  post_tasks:
+    - name: Start / enable icinga-director
+      ansible.builtin.systemd_service:
+        name: icinga-director
+        state: started
+        enabled: true
+
+    - name: Start / enable httpd if needed
+      ansible.builtin.systemd_service:
+        name: httpd
+        state: started
+        enabled: true
+      when: ansible_os_family == "RedHat"
+  
+  roles:
+    - tbauriedel.gographite.gocarbon
+    - tbauriedel.gographite.carbonapi
+    - geerlingguy.mysql
+    - icinga.icinga.repos
+    - icinga.icinga.icinga2
+    - icinga.icinga.icingadb_redis
+    - icinga.icinga.icingadb
+    - icinga.icinga.icingaweb2

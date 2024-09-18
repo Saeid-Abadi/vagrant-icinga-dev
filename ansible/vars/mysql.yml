@@ -1,0 +1,11 @@
+---
+mysql_root_password: root0815!
+mysql_databases:
+  - name: icingadb
+  - name: icingaweb2
+  - name: director
+mysql_users:
+  - name: poweruser
+    host: "localhost"
+    password: poweruser
+    priv: "*.*:ALL"

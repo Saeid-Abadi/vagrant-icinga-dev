@@ -1,0 +1,6 @@
+---
+icingadb_database_type: mysql
+icingadb_database_port: 3306
+icingadb_database_user: poweruser
+icingadb_database_password: poweruser
+icingadb_database_import_schema: true

@@ -1,0 +1,40 @@
+---
+icinga2_constants:
+  NodeName: "icinga-dev"
+  ZoneName: main
+icinga2_confd: false
+icinga2_config_directories:
+  - zones.d/main
+icinga2_features:
+  - name: icingadb
+    host: localhost
+    port: 6380
+    password: redis-pass
+  - name: api
+    ca_host: none
+    endpoints:
+      - name: NodeName
+        host: 127.0.0.1
+    zones:
+      - name: main
+        endpoints:
+          - NodeName
+      - name: director-global
+        global: true
+  - name: checker
+    state: present
+  - name: mainlog
+    state: present
+  - name: graphite
+    state: present
+    host: localhost
+    port: 2003
+    enable_send_thresholds: true
+    enable_send_metadata: true
+icinga2_objects:
+  - name: poweruser
+    type: ApiUser
+    file: "zones.d/main/apiuser.conf"
+    password: poweruser
+    permissions:
+      - '*'

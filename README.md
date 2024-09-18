@@ -1,0 +1,29 @@
+# vagrant-icinga-dev
+
+Vagrantfile with ansible provisioner.  
+Installs and configures the Icinga stack inside of the box.
+
+Image: `bento/rockylinux-8`  
+Hostname: `icinga-dev`  
+Provider: `VirtualBox`  
+
+## Usage
+Clone the repository: `git clone https://github.com/tbauriedel/vagrant-icinga-dev`
+
+Move into repository: `cd vagrant-icinga-dev`
+
+Add Icinga Subscription credentials [here](ansible/vars/icinga2_repo.yml).  
+(If you dont have a subscription, just change the box to a debian based one)
+
+Start the Vagrant box: `vagrant up`
+
+---
+
+To sync additional modules or similar into the box, you can use the example inside of the [Vagrantfile](Vagrantfile) (Currently commented out).
+
+## Forwarded ports
+
+The following ports will be forwarded into the Vagrant box:
+* 80 (guest) => 80 (host)
+* 443 (guest) => 443 (host) // Webserver with TLS not configured via default
+* 5665 (guest) => 5665 (guest)
