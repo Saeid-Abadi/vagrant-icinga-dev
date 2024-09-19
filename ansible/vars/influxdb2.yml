@@ -1,7 +1,7 @@
 ---
 influxdb_influxdb2_host: "http://localhost:8086"
 influxdb_influxdb2_primary_user:
-  name: admin 
+  name: admin
   password: 'admin12345!'
 influxdb_influxdb2_primary_org: default
 influxdb_influxdb2_primary_bucket: default
