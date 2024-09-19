@@ -12,7 +12,8 @@ Provider: `VirtualBox`
 The following ports will be forwarded into the Vagrant box:
 * 80 (guest) => 80 (host)
 * 443 (guest) => 443 (host) // Webserver with TLS not configured via default
-* 5665 (guest) => 5665 (guest)
+* 5665 (guest) => 5665 (host)
+* 8086 (guest) => 8086 (host)
 
 ## Credentials
 
@@ -22,6 +23,7 @@ Default credentials if not customized (Format: `user` - `password`):
 * IcingaDB-redis password => `redis-pass`
 * Mysql `*.*` user => `poweruser` - `poweruser`
 * Mysql root user: `root` - `root0815!`
+* InfluxDB admin user: `admin` - `admin12345!`
 
 ## Components
 
