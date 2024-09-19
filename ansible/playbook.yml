@@ -33,6 +33,8 @@
   roles:
     - tbauriedel.gographite.gocarbon
     - tbauriedel.gographite.carbonapi
+    - tbauriedel.influxdb2.repos
+    - tbauriedel.influxdb2.influxdb2
     - geerlingguy.mysql
     - icinga.icinga.repos
     - icinga.icinga.icinga2

@@ -33,9 +33,11 @@ The most common used components are pre-installed and configured.
   * Icingadb Redis
   * Icinga Web 2
   * Icinga Director
-* Metrics (Ansible collection `tbauriedel.gographite`)
+* Graphite (Ansible collection `tbauriedel.gographite`)
   * go-carbon
   * carbonapi
+* InfluxDB (Ansible collection `tbauriedel.influxdb2`)
+  * InfluxDB v2
 
 ## Requirements
 
