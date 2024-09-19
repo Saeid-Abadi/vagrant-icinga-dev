@@ -25,6 +25,15 @@ icingaweb2_resources:
     password: poweruser
     use_ssl: 0
     charset: utf8
+  x509:
+    type: db
+    db: mysql
+    host: localhost
+    dbname: x509
+    username: poweruser
+    password: poweruser
+    use_ssl: 0
+    charset: utf8
 icingaweb2_modules:
   director:
     enabled: true
@@ -58,6 +67,22 @@ icingaweb2_modules:
       redis1:
         host: "127.0.0.1"
         password: redis-pass
+  x509:
+    enabled: true
+    source: package
+    config:
+      backend:
+        resource: x509
+    database:
+      import_schema: true
+      type: mysql
+      host: localhost
+      port: 3306
+      user: poweruser
+      password: poweruser
+  businessprocess:
+    enabled: true
+    source: package
 
 icingaweb2_admin_username: icinga
 icingaweb2_admin_password: icinga

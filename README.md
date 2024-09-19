@@ -31,10 +31,12 @@ The most common used components are pre-installed and configured.
 * MySQL (Ansible role `geerlingguy.mysql`)
 * Icinga (Ansible collection `icinga.icinga`)
   * Icinga 2
-  * Icingadb
-  * Icingadb Redis
+  * IcingaDB
+  * IcingaDB Redis
   * Icinga Web 2
   * Icinga Director
+  * x509
+  * Business Process
 * Graphite (Ansible collection `tbauriedel.gographite`)
   * go-carbon
   * carbonapi
