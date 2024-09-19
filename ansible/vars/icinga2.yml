@@ -31,6 +31,12 @@ icinga2_features:
     port: 2003
     enable_send_thresholds: true
     enable_send_metadata: true
+  - name: influxdb2
+    host: localhost
+    port: 8086
+    bucket: icinga2
+    organization: monitoring
+    auth_token: "AHDUKAGSszifgj21711sfztGASg2"
 icinga2_objects:
   - name: poweruser
     type: ApiUser
