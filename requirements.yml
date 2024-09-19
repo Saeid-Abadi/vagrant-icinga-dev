@@ -6,3 +6,4 @@ collections:
   - name: icinga.icinga
   - name: tbauriedel.gographite
   - name: tbauriedel.influxdb2
+  - name: grafana.grafana

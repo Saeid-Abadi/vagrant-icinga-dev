@@ -31,13 +31,14 @@
       when: ansible_os_family == "RedHat"
 
   roles:
-    - tbauriedel.gographite.gocarbon
-    - tbauriedel.gographite.carbonapi
-    - tbauriedel.influxdb2.repos
-    - tbauriedel.influxdb2.influxdb2
-    - geerlingguy.mysql
-    - icinga.icinga.repos
-    - icinga.icinga.icinga2
-    - icinga.icinga.icingadb_redis
-    - icinga.icinga.icingadb
-    - icinga.icinga.icingaweb2
+    #- tbauriedel.gographite.gocarbon
+    #- tbauriedel.gographite.carbonapi
+    #- tbauriedel.influxdb2.repos
+    #- tbauriedel.influxdb2.influxdb2
+    - grafana.grafana.grafana
+    #- geerlingguy.mysql
+    #- icinga.icinga.repos
+    #- icinga.icinga.icinga2
+    #- icinga.icinga.icingadb_redis
+    #- icinga.icinga.icingadb
+    #- icinga.icinga.icingaweb2

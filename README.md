@@ -14,6 +14,7 @@ The following ports will be forwarded into the Vagrant box:
 * 443 (guest) => 443 (host) // Webserver with TLS not configured via default
 * 5665 (guest) => 5665 (host)
 * 8086 (guest) => 8086 (host)
+* 3000 (guest) => 3000 (host)
 
 ## Credentials
 
@@ -42,6 +43,8 @@ The most common used components are pre-installed and configured.
   * carbonapi
 * InfluxDB (Ansible collection `tbauriedel.influxdb2`)
   * InfluxDB v2
+* Grafana
+  * Grafana (Ansible collection `grafana.grafana`)
 
 ## Requirements
 
