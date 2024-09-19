@@ -37,6 +37,8 @@ icinga2_features:
     bucket: icinga2
     organization: monitoring
     auth_token: "AHDUKAGSszifgj21711sfztGASg2"
+    enable_send_thresholds: true
+    enable_send_metadata: true
 icinga2_objects:
   - name: poweruser
     type: ApiUser
