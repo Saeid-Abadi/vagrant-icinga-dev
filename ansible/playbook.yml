@@ -41,3 +41,4 @@
     - icinga.icinga.icingadb_redis
     - icinga.icinga.icingadb
     - icinga.icinga.icingaweb2
+    - icinga.icinga.monitoring_plugins
