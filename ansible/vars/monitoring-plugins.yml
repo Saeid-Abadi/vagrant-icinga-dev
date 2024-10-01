@@ -1,0 +1,5 @@
+---
+icinga_monitoring_plugins_epel: true
+icinga_monitoring_plugins_crb: true
+icinga_monitoring_plugins_check_commands:
+    - "all"
