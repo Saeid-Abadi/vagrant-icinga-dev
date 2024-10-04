@@ -2,6 +2,21 @@
 - hosts: all
   gather_facts: true
   become: true
+  vars:
+    _enabled_roles:
+      - tbauriedel.gographite.gocarbon
+      - tbauriedel.gographite.carbonapi
+      - tbauriedel.influxdb2.repos
+      - tbauriedel.influxdb2.influxdb2
+      - grafana.grafana.grafana
+      - geerlingguy.mysql
+      - icinga.icinga.repos
+      - icinga.icinga.icinga2
+      - icinga.icinga.icingadb_redis
+      - icinga.icinga.icingadb
+      - icinga.icinga.icingaweb2
+      - icinga.icinga.monitoring_plugins
+
   pre_tasks:
     - name: Include vars
       ansible.builtin.include_vars:
@@ -15,6 +30,12 @@
       when:
         - ansible_os_family == "RedHat"
         - icinga_repo_subscription_username == "" or icinga_repo_subscription_password == ""
+        - "'icinga.icinga.repos' in _enabled_roles"
+
+  tasks:
+    - ansible.builtin.include_role:
+        name: "{{ item }}"
+      loop: "{{ _enabled_roles }}"
 
   post_tasks:
     - name: Start / enable icinga-director
@@ -22,23 +43,13 @@
         name: icinga-director
         state: started
         enabled: true
+      when: "'icinga.icinga.icingaweb2' in _enabled_roles"
 
     - name: Start / enable httpd if needed
       ansible.builtin.systemd_service:
         name: httpd
         state: started
         enabled: true
-      when: ansible_os_family == "RedHat"
-
-  roles:
-    - tbauriedel.gographite.gocarbon
-    - tbauriedel.gographite.carbonapi
-    - tbauriedel.influxdb2.repos
-    - tbauriedel.influxdb2.influxdb2
-    - geerlingguy.mysql
-    - icinga.icinga.repos
-    - icinga.icinga.icinga2
-    - icinga.icinga.icingadb_redis
-    - icinga.icinga.icingadb
-    - icinga.icinga.icingaweb2
-    - icinga.icinga.monitoring_plugins
+      when:
+        - ansible_os_family == "RedHat"
+        - "'icinga.icinga.icingaweb2' in _enabled_roles"
