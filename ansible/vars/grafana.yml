@@ -2,3 +2,24 @@
 grafana_security:
   admin_user: admin
   admin_password: admin
+  allow_embedding: true
+grafana_auth:
+  anonymous:
+    enabled: true
+    org_role: Viewer
+
+grafana_datasources:
+  - name: "Local CarbonApi"
+    ds_type: graphite
+    ds_url: http://localhost:8888
+  - name: "Local InfluxDB - Flux"
+    ds_type: influxdb
+    ds_url: http://localhost:8086
+    additional_json_data:
+      version: "Flux"
+      organization: "monitoring"
+      defaultBucket: "icinga2"
+      tlsSkipVerify: false
+    additional_secure_json_data:
+      token: "AHDUKAGSszifgj21711sfztGASg2"
+  # Add "InfluxDB - InfluxQL" as datasource
