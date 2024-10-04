@@ -52,10 +52,10 @@ The most common used components are pre-installed and configured.
 
 ## Requirements
 
-**Vagrant**
+**Vagrant**  
 If you dont have it already check the official [installation guide](https://developer.hashicorp.com/vagrant/docs/installation).
 
-**Ansible**
+**Ansible**  
 If you dont have it already check the official [installation guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
 
 ## Usage
